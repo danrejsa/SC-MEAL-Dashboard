@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head'); %>
+</head>
+
+<body>
+    
+        
+            <!-- Navbar End -->
+            <%- include('./partials/header'); %>
+
+            <!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-12">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Indicators Information</h6>
+                            <form id="createIndicator">
+                                <!-- <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Project Code</label>
+                                    <input type="text" class="form-control" id="projectCode"
+                                        aria-describedby="emailHelp">
+                                   
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Indicator Code</label>
+                                    <input type="text" class="form-control" id="code"
+                                        aria-describedby="emailHelp">
+                                   
+                                </div>
+                                    
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Indicator Name</label>
+                                    <input type="text" class="form-control" id="name"
+                                        aria-describedby="emailHelp">
+                                   
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Target</label>
+                                    <input type="text" class="form-control" id="target"
+                                        aria-describedby="emailHelp" placeholder="Numbers Only">
+                                   
+                                </div> -->
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Number of Boys 0-6</label>
+                                    <input type="text" class="form-control" id="cboys"
+                                        aria-describedby="emailHelp">
+                                   
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Number of Girls 0-6</label>
+                                    <input type="text" class="form-control" id="cgirls"
+                                        aria-describedby="emailHelp" placeholder="Numbers Only">
+                                   
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Number of male 11-13</label>
+                                    <input type="text" class="form-control" id="adoleboys"
+                                        aria-describedby="emailHelp">
+                                    
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Number of Female 11-13</label>
+                                    <input type="text" class="form-control" id="adolegirls"
+                                        aria-describedby="emailHelp">
+                                    
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Number of Male 13-17</label>
+                                    <input type="text" class="form-control" id="adultboys"
+                                        aria-describedby="emailHelp">
+                                   
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Number of Female 13-17</label>
+                                    <input type="text" class="form-control" id="adultgirls"
+                                        aria-describedby="emailHelp">
+                                   
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Number of Male</label>
+                                    <input type="text" class="form-control" id="male"
+                                        aria-describedby="emailHelp">
+                                    
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Number of Female</label>
+                                    <input type="text" class="form-control" id="female"
+                                        aria-describedby="emailHelp">
+                                   
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Total of Disable Adults</label>
+                                    <input type="text" class="form-control" id="total_pwd"
+                                        aria-describedby="emailHelp" placeholder="Numbers Only">
+                                    
+                                </div>
+                                <div class="mb-3">
+                                    <label for="floatingSelect mb-6">Beneficiary Status</label>
+                                
+                                    <select class="form-select" id="beneficiary_status" name="beneficiary_status"
+                                        aria-label="Floating label select example">
+                                       
+                                        <option selected>IDPs</option>
+                                        <option value="1">Host Community</option>
+                                        <option value="2">Returnee</option>
+                                        <option value="3">Refugee</option>
+                                    </select>
+                                    
+                                </div>
+                                <div class="col-lg-12 mx-auto mb-2 mt-3" id="FeedBackmessage"></div>
+                                <button type="submit" id="submitIndicator" class="btn btn-primary py-3 w-100 mb-4">Update Indicator</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+                  
+            </div>
+            <!-- Form End -->
+
+
+            <!-- Footer Start -->
+            <%- include('./partials/footer'); %>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/js/main.js"></script>
+
+   <script>
+    $(() => {
+       
+    //Check if the blog-id is given 
+    let url = new URL(location.href);
+    let urlParams = url.search;
+    
+    if(!urlParams)
+    {
+      location.href = "/edit-indicator";
+    }
+
+    let indicatorId = urlParams.substr(14);
+    
+    $.ajax({
+      type: 'GET',
+      url: `/api/v1/get-indicator/${indicatorId}`,
+      success: (data) => {
+        loadData(data.data);
+      },
+      error: (jqXHR,textStatus,errorThrown) => {
+        const responseJSON = jqXHR.responseJSON;
+        const message = `<div class="alert alert-danger">${responseJSON.message}</div>`
+        $('#FeedBackmessage').html(message);
+      },
+    });
+
+  $('#createIndicator').submit((e) => {
+            e.preventDefault();
+    
+            const child_boys = $('#cboys').val();
+            const child_girls = $('#cgirls').val();
+            const adole_boys = $('#adoleboys').val();
+            const adole_girls = $('#adolegirls').val();
+            const adult_boys = $('#adultboys').val();
+            const adult_girls = $('#adultgirls').val();
+            const male = $('#male').val();
+            const female = $('#female').val();
+            const total_pwd = $('#total_pwd').val();
+            const beneficiary_status = $('select[name="beneficiary_status"] option:selected').text();
+            
+            const indicatorData = {
+                child_boys:child_boys,
+                child_girls:child_girls,
+                adole_boys: adole_boys,
+                adole_girls: adole_girls,
+                adult_boys: adult_boys,
+                adult_girls: adult_girls,
+                male: male,
+                female: female,
+                total_pwd: total_pwd,
+                beneficiary_status: beneficiary_status
+            }
+            $.ajax({
+                type: 'PUT',
+                contentType: 'application/json',
+                url:`/api/v1/update-indicator/${indicatorId}`,
+                data:JSON.stringify(indicatorData),
+                dataType:'json',
+                processData: false,
+                beforeSend: () => {
+                    
+                    const message = `<div class="alert alert-info">
+                    <p>Please wait while updating...</p>
+                    </div>`;
+                    $('#FeedBackmessage').html(message);
+                    $('#submitIndicator').prop('disabled',true);
+                },
+                success: (indicatorData) => {
+                    // localStorage.setItem("jwt-token-scon", data.token);
+                    const message = `<div class="alert alert-success">
+                       <p> Indicator Updated successfully</p>
+                    </div>`;
+                    $('#FeedBackmessage').html(message);
+                    // window.location.href = '/home';
+
+                    
+                },
+                error: (jqXHR,textStatus,errorThrown) => {
+                    
+                    const responseJson = jqXHR.responseJSON;
+                    $('#FeedBackmessage').html("");
+                    if (!responseJson) {
+                        const message = `<div class="alert alert-danger">
+                        <p>Indicator Information is required</p>
+                        <p>Opps somethong went wrong</p>
+                        </div>`;
+                        $('#FeedBackmessage').html(message)
+                        console.log(responseJson.message);
+                        return;
+                    }
+                    else{
+                        const message = `<div class="alert alert-danger">
+                        ${responseJson.message}
+                        </div>`;
+                        $('#FeedBackmessage').html(message)
+                        return;
+                    }
+                },
+                complete: () => {
+                    $('#submitIndicator').prop('disabled',false);
+                }
+            });
+        })
+           
+    })
+    function loadData(data){
+            $('#cboys').val(data.child_boys);
+            $('#cgirls').val(data.child_girls);
+            $('#adoleboys').val(data.adole_boys);
+            $('#adolegirls').val(data.adole_girls);
+            $('#adultboys').val(data.adult_boys);
+            $('#adultgirls').val(data.adult_girls);
+            $('#male').val(data.male);
+            $('#female').val(data.female);
+            $('#total_pwd').val(data.total_pwd);
+            $('#projectCode').val(data.project_code);
+            $('select[name="beneficiary_status"] option:selected').text(data.beneficiary_status);
+  }
+   </script>
+</body>
+
+</html>

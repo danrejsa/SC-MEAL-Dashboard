@@ -1,0 +1,155 @@
+<div class="sidebar pe-4 pb-3">
+    <nav class="navbar bg-secondary navbar-dark">
+        <a href="index.ejs" class="navbar-brand mx-4 mb-3">
+            <h3 class="text-warning"><i class="fa fa-user-edit me-2"></i>SCoN MEAL</h3>
+        </a>
+        <div class="d-flex align-items-center ms-4 mb-4">
+            <div class="position-relative">
+                <svg xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: 40px;" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                  </svg>
+                <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+            </div>
+            <div class="ms-3">
+                <h6 class="mb-0">Admin</h6>
+                <span>SCoN</span>
+            </div>
+        </div>
+        <div class="navbar-nav w-100">
+            <a href="/dashboard" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>SCoN Dashboard</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-chart-pie me-2"></i>Dashboards</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="/nhf-dashboard" class="nav-item nav-link"><i class="fa fa-chart-pie me-2"></i>NHF Dashbord</a>
+                    <!-- <a href="/giz-dashboard" class="nav-item nav-link"><i class="fa fa-chart-pie me-2"></i>GIZ Dashboard</a> -->
+                    <a href="/eu-dashboard" class="nav-item nav-link"><i class="fa fa-chart-pie me-2"></i>EU Dashboard</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Indicators</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="/create-indicator" class="nav-item nav-link"><i class="bi bi-cloud-plus me-2"></i>Add</a>
+                    <a href="/indicators" class="nav-item nav-link"><i class="fa fa-eye me-2"></i>View</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Project</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="/create-project" class="nav-item nav-link"><i class="bi bi-cloud-plus me-2"></i>Add</a>
+                    <a href="/project" class="nav-item nav-link"><i class="fa fa-eye me-2"></i>View</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-tools me-2"></i>Toolkits</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="/upload-toolkits" class="nav-item nav-link"><i class="bi bi-cloud-plus me-2"></i>Add</a>
+                    <a href="/view-toolkits" class="nav-item nav-link"><i class="fa fa-eye me-2"></i>View</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-ui-checks-grid me-2"></i>Movs</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="/upload-mov" class="nav-item nav-link"><i class="bi bi-cloud-plus me-2"></i>Add</a>
+                    <a href="/view-mov" class="nav-item nav-link"><i class="fa fa-eye me-2"></i>View</a>
+                </div>
+            </div>
+            <a href="/impact" class="nav-item nav-link"><i class="bi bi-graph-up me-2"></i>Impact</a>            
+            <br>
+            <br>
+            <br>
+            <br>
+            <a href="/create-user" class="nav-item nav-link"><i class="bi bi-person-plus-fill me-2"></i>Create User</a>
+            
+        </div>
+    </nav>
+</div>
+<div class="content">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+        <a href="index.ejs" class="navbar-brand d-flex d-lg-none me-4">
+            <h2 class="text-warning mb-0"><i class="fa fa-user-edit"></i></h2>
+        </a>
+        <a href="#" class="sidebar-toggler flex-shrink-0">
+            <i class="fa fa-bars"></i>
+        </a>
+        <!-- <form class="d-none d-md-flex ms-4">
+            <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+        </form> -->
+        <div class="navbar-nav align-items-center ms-auto">
+            <!-- <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="fa fa-envelope me-lg-2"></i>
+                    <span class="d-none d-lg-inline-flex">message</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                    <a href="#" class="dropdown-item">
+                        <div class="d-flex align-items-center">
+                            <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <div class="ms-2">
+                                <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                <small>15 minutes ago</small>
+                            </div>
+                        </div>
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-user-edit me-2"></i>
+                            <div class="ms-2">
+                                <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                <small>15 minutes ago</small>
+                            </div>
+                        </div>
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        <div class="d-flex align-items-center">
+                            <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <div class="ms-2">
+                                <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                <small>15 minutes ago</small>
+                            </div>
+                        </div>
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item text-center">See all message</a>
+                </div> -->
+            </div>
+            <div class="nav-item dropdown">
+                <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="fa fa-bell me-lg-2"></i>
+                    <span class="d-none d-lg-inline-flex">Notificatin</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                    <a href="#" class="dropdown-item">
+                        <h6 class="fw-normal mb-0">Profile updated</h6>
+                        <small>15 minutes ago</small>
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        <h6 class="fw-normal mb-0">New user added</h6>
+                        <small>15 minutes ago</small>
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        <h6 class="fw-normal mb-0">Password changed</h6>
+                        <small>15 minutes ago</small>
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item text-center">See all notifications</a>
+                </div> -->
+            </div>
+            <div class="nav-item dropdown">
+                <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                    <span class="d-none d-lg-inline-flex">Ifeanyi </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                    <a href="#" class="dropdown-item">My Profile</a>
+                    <a href="#" class="dropdown-item">Settings</a>
+                    <a href="#" class="dropdown-item">Log Out</a>
+                </div>
+            </div> -->
+        </div>
+    </nav>

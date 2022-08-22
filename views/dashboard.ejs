@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <%- include('./partials/head'); %>
+    </head>
+    
+    <body>
+        <%- include('./partials/header'); %>
+            <!-- Navbar End -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row vh-50 bg-secondary rounded align-items-center justify-content-center mx-0">
+                    <div class="col-md-6 text-center mb-20">
+                        <h1 class="text-warning mt-20"></h1>
+                        <h3>Street Child Dashboard</h3>
+                        <h6>This Dashboard Measures level of indicators accross program thematic</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-child fa-3x text-warning"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Boys Reached</p>
+                                <h6 class="mb-0" id="totalBoys"></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-female fa-3x text-warning"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Girls Reached</p>
+                                <h6 class="mb-0" id="totalGirls"></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-area fa-3x text-warning"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Caregivers Reached</p>
+                                <h6 class="mb-0" id="totalCaregivers"></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-pie fa-3x text-warning"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total Reached</p>
+                                <h6 class="mb-0" id="totalReached"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           
+
+            <!-- Chart Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Child Protection</h6>
+                            <canvas id="worldwide-sales"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Education</h6>
+                            <canvas id="salse-revenue"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Nutrition</h6>
+                            <canvas id="bar-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Livelihood</h6>
+                            <canvas id="line-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Reached Segregation by Gender</h6>
+                            <canvas id="pie-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Befiniciary Category</h6>
+                            <canvas id="doughnut-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Chart End -->
+
+
+            <!-- Footer Start -->
+            <%- include('./partials/footer'); %>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/js/main.js"></script>
+    <script>
+        $(document).ready(() => {
+        $.ajax({
+          type: 'GET',
+          url: '/api/v1/get-indicators',
+          dataType: 'json',
+          beforeSend: () => {
+            $('#feedbackmessage').html(`<div class="alert alert-info">Fetching Chart data...</div>`);
+          },
+          success: (data) => {
+            const detailsData = data.data;
+            console.log(detailsData);
+            $('#totalBoys').html(`${detailsData.total_boys[0].total_boys}`);
+            $('#totalGirls').html(`${detailsData.total_girls[0].total_girls}`);
+            $('#totalCaregivers').html(`${detailsData.total_females[0].total_females}`);
+            $('#totalReached').html(`${detailsData.reached[0].total_reached}`);
+            $('#totalPWD').html(`${detailsData.total_pwds[0].total_pwds}`);
+
+            var ctx1 = $("#worldwide-sales").get(0).getContext("2d");
+            var myChart1 = new Chart(ctx1, {
+                type: "bar",
+                data: {
+                    labels: ["Case management"],
+                    datasets: [{
+                            label: "Target",
+                            data: [detailsData.target[0].total_target],
+                            backgroundColor: "rgba(235, 22, 22, .7)"
+                        },
+                        {
+                            label: "Reached, ",
+                            data: [detailsData.reached[0].total_reached],
+                            backgroundColor: "rgba(235, 22, 22, .5)"
+                        }
+                        
+                    ]
+                    },
+                options: {
+                    responsive: true
+                }
+            });
+
+            var ctx2 = $("#salse-revenue").get(0).getContext("2d");
+            var myChart2 = new Chart(ctx2, {
+                type: "line",
+                data: {
+                    labels: ["Children Reached Segeration by Gender", "Total number of caregivers Reached"],
+                    datasets: [{
+                            label: "Boys and Girls Reached",
+                            data: [detailsData.total_girls[0].total_girls, detailsData.total_boys[0].total_boys],
+                            backgroundColor: "rgba(235, 22, 22, .7)",
+                            fill: true
+                        },
+                        {
+                            label: "Male and Females caregiver Reached",
+                            data: [detailsData.total_females[0].total_females, detailsData.total_males[0].total_males],
+                            backgroundColor: "rgba(235, 22, 22, .5)",
+                            fill: true
+                        }
+                    ]
+                    },
+                options: {
+                    responsive: true
+                }
+            });
+     
+           
+          },
+          error: (jqXHR,textStatus,errorThrown) => {
+            console.log(errorThrown);
+            return;
+          },
+          complete: () => {
+            $('#feedbackmessage').html(``);
+           
+          }
+        });
+    })
+    
+
+    </script>
+
+</body>
+
+</html>
